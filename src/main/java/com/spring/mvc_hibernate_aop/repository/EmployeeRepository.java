@@ -3,9 +3,9 @@ package com.spring.mvc_hibernate_aop.repository;
 import com.spring.mvc_hibernate_aop.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -35,5 +35,15 @@ public class EmployeeRepository implements IEmployeeRepository {
 
         Employee employee = session.get(Employee.class, id);
         return employee;
+    }
+
+    @Override
+    public void deleteById(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Query<Employee> query = session.createQuery("delete from Employee " +
+                "where id= :employeeId");
+        query.setParameter("employeeId", id);
+        query.executeUpdate();
+
     }
 }
