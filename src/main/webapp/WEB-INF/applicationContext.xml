@@ -35,7 +35,7 @@
         <property name="jdbcUrl"
                   value="jdbc:mysql://localhost:3306/SpringMVC_Hibernate?useSSL=false&amp;serverTimezone=UTC"/>
         <property name="user" value="root"/>
-        <property name="password" value="z00018308z"/>
+        <property name="password" value="****"/>
     </bean>
 
     <bean id="sessionFactory"
