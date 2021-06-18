@@ -10,4 +10,6 @@ public interface IEmployeeRepository {
     public void saveEmployee(Employee employee);
 
     public Employee getById(int id);
+
+    public void deleteById(int id);
 }

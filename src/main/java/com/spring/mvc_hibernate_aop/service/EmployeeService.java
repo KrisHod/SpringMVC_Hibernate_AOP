@@ -21,7 +21,7 @@ public class EmployeeService implements IEmployeeService{
 
     @Override
     @Transactional
-    public void saveEmployee(Employee employee) {
+    public void save(Employee employee) {
         employeeRepository.saveEmployee(employee);
     }
 
@@ -29,5 +29,11 @@ public class EmployeeService implements IEmployeeService{
     @Transactional
     public Employee getById(int id) {
         return employeeRepository.getById(id);
+    }
+
+    @Override
+    @Transactional
+    public void deleteById(int id) {
+        employeeRepository.deleteById(id);
     }
 }
